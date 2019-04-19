@@ -1,11 +1,10 @@
 const mysql = require("mysql");
 const pool = mysql.createPool({
-    connLimit: 20,
-    host: "ec2-23-21-136-232.compute-1.amazonaws.com",
-    user: "kqbbjhoquqwawi",
-    password: "6b9020372d16d6a8cc2e6f999935a17ae6ddc65d21a3f772de568326c623131e",
-    database: "dc1ru9f478icgs",
-    port: "5432",
+    connLimit: 100,
+    host: "localhost",
+    user: "airports",
+    password: "",
+    database: "airports",
     debug: false
 });
 
