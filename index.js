@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 8081;
 const db = require("./queries");
 
 app.use(bodyParser.json());
@@ -22,6 +21,11 @@ app.get("/airports/country/:country", db.getAirportsByCountry);
 app.get("/airports/iata/:iata", db.getAirportsByIATA);
 app.get("/airports/icao/:icao", db.getAirportsByICAO);
 
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 8000;
+}
 app.listen(port, () => {
-    console.log("App running on port "+port);
+    console.log("App running on port " + port);
 })
