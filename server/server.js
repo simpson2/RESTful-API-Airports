@@ -3,10 +3,10 @@ const routes = require("../routes/routes.js");
 const bodyParser = require("body-parser");
 const app = express();
 
-app.use(bodyParser.json());
-app.use(
+app.use(bodyParser.json()); // JSON support
+app.use(                    // URL support
     bodyParser.urlencoded({
-        extended: false,
+        extended: true,
     })
 );
 
