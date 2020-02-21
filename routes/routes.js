@@ -1,6 +1,7 @@
 const db = require("../queries.js");
 
 var appRoutes = (app) => {
+    
     app.get("/", (req, res) => {
         res.json({ info: 'Node.js, Express, and MariaDB API' })
     });
