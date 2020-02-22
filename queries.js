@@ -8,6 +8,10 @@ const pool = mysql.createPool({
     debug: false
 });
 
+const home = (req, res) => {
+    return res.json({ info: 'Node.js, Express, and MariaDB API' });
+}
+
 const getAirports = (req, res) => {
     pool.query("SELECT * FROM airports ORDER BY id ASC", (err, results) => {
         if (err) {
@@ -94,6 +98,7 @@ const getAirportsByICAO = (req, res) => {
 };
 
 module.exports = {
+    home,
     getAirports,
     getAirportById,
     getAirportsByCity,

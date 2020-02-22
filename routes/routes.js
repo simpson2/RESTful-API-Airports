@@ -2,10 +2,7 @@ const db = require("../queries.js");
 
 var appRoutes = (app) => {
     
-    app.get("/", (req, res) => {
-        res.json({ info: 'Node.js, Express, and MariaDB API' })
-    });
-    
+    app.get("/", db.home);
     app.get("/airports", db.getAirports);
     app.get("/airports/id/:id", db.getAirportById);
     app.get("/airports/city/:city", db.getAirportsByCity);
